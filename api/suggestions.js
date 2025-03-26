@@ -41,9 +41,30 @@ export default async function handler(req, res) {
       });
     }
 
+    // Log the entire response data for debugging
+    console.log('Response Data:', response.data);
+
     // Respond with the suggestions (second array in the response)
+    /*
     const suggestions = response.data[1].map((item) => item[0]);
     return res.status(200).json(suggestions);
+    */
+
+    // The response is wrapped in a function call, so we need to remove the function and extract the actual data
+    const rawData = response.data;
+    const jsonData = rawData.substring(rawData.indexOf('(') + 1, rawData.lastIndexOf(')')); // Extract the JSON part
+    const parsedData = JSON.parse(jsonData);  // Parse the JSON string into an object
+
+    // Check if the second element of the array exists and is an array
+    if (Array.isArray(parsedData[1])) {
+      const suggestions = parsedData[1].map((item) => item[0]);
+      // console.log(res.status(200).json(suggestions));
+      return res.status(200).json(suggestions);
+    } else {
+      console.error('Invalid response structure:', parsedData);
+      return res.status(500).json({ error: 'Invalid response structure from Google Suggest API' });
+    }
+
   } catch (error) {
     console.error('Error fetching suggestions:', error);
     return res.status(500).json({ error: 'Error fetching suggestions' });
