@@ -1,0 +1,24 @@
+{
+  "name": "search-suggestions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivansojivarghese/search-suggestions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivansojivarghese/search-suggestions/issues"
+  },
+  "homepage": "https://github.com/ivansojivarghese/search-suggestions#readme",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "axios-jsonp": "^1.0.4"
+  }
+}

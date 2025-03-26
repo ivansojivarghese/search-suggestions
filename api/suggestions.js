@@ -1,5 +1,3 @@
-
-// api/suggestions.js
 import axios from 'axios';
 import jsonpAdapter from 'axios-jsonp';
 
@@ -13,14 +11,15 @@ export default async function handler(req, res) {
   const GOOGLE_AC_URL = 'https://clients1.google.com/complete/search';
   
   try {
+    // Make the request to the Google Suggest API using axios with jsonpAdapter
     const response = await axios({
       url: GOOGLE_AC_URL,
       adapter: jsonpAdapter,
       params: {
-        client: 'youtube',
-        hl: 'en',
-        ds: 'yt',
-        q: term,
+        client: 'youtube',  // YouTube-specific client
+        hl: 'en',           // Language parameter
+        ds: 'yt',           // Data source parameter (YouTube)
+        q: term,            // Search term
       },
     });
 
