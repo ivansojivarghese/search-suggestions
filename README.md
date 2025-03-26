@@ -179,6 +179,8 @@ For **Heroku**:
 
 This project demonstrates how to create a simple API to fetch search suggestions using Google Suggest and handle CORS issues. It also handles both client-side and server-side environments, providing a smooth experience for various platforms.
 
+Inspired from: https://dev.to/adrienshen/hacking-together-your-own-youtube-suggest-api-c0o 
+
 ## [Technologies Used (in detail)](#technologies-used-in-detail)
 
 Here’s a summary of the techniques and technologies you worked with:
