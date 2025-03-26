@@ -183,34 +183,34 @@ This project demonstrates how to create a simple API to fetch search suggestions
 
 Here’s a summary of the techniques and technologies you worked with:
 
-1. Express.js and API Setup
+### 1. Express.js and API Setup
 Express.js: You created an Express server to handle HTTP requests.
 
 API Route: Defined a GET endpoint (/api/suggestions) to handle search term requests and fetch search suggestions.
 
-2. CORS Handling
+### 2. CORS Handling
 CORS (Cross-Origin Resource Sharing): You configured CORS in the Express server to allow specific origins (https://media-sphere.vercel.app) to make requests to the server, preventing CORS issues when requesting resources from different origins.
 
-3. Axios for HTTP Requests
+### 3. Axios for HTTP Requests
 Axios: Used Axios to send HTTP requests to the Google Suggest API endpoint (https://clients1.google.com/complete/search) and handle both server-side and client-side requests.
 
 JSONP Adapter: Incorporated a custom JSONP adapter for the client-side requests to handle cross-origin requests in the browser, a solution for when CORS is restricted.
 
-4. Google Autocomplete API (Google AC URL)
+### 4. Google Autocomplete API (Google AC URL)
 You utilized the Google Suggest API to fetch search suggestions based on a given search term. This data is used to return relevant suggestions for a search query.
 
-5. Error Handling
+### 5. Error Handling
 Error Handling in API Requests: Incorporated error handling using try-catch to catch potential issues with the API request (e.g., invalid response, network errors).
 
 Response Structure Validation: Added checks to ensure the structure of the response is valid and logs errors if the expected data format is not received.
 
-6. Environment Detection
+### 6. Environment Detection
 Browser vs Server Detection: Used a check (typeof window !== 'undefined' && typeof document !== 'undefined') to detect if the code is running in a browser or server environment, allowing different logic for handling requests based on the environment.
 
-7. Response Parsing
+### 7. Response Parsing
 Handling JSONP Responses: For browser-side requests, you used a custom jsonpAdapter to handle the Google Suggest JSONP response format.
 
 String Manipulation: In the server-side code, you extracted the JSON part from a wrapped JavaScript function using string manipulation (substring), and then parsed the JSON response.
 
-8. Running the Code in a Serverless Environment
+### 8. Running the Code in a Serverless Environment
 Serverless Deployments: Since the environment you're working in seems to be serverless (like Vercel or AWS Lambda), the structure of the app and how it was deployed is important. Express was integrated with serverless deployment, which helped manage the CORS policy and handle HTTP requests effectively.
