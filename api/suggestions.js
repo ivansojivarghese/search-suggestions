@@ -82,12 +82,6 @@ export default async function handler(req, res) {
     // Log the entire response data for debugging
     console.log('Response Data:', response.data);
 
-    // Respond with the suggestions (second array in the response)
-    /*
-    const suggestions = response.data[1].map((item) => item[0]);
-    return res.status(200).json(suggestions);
-    */
-
     // The response is wrapped in a function call, so we need to remove the function and extract the actual data
     const rawData = response.data;
     const jsonData = rawData.substring(rawData.indexOf('(') + 1, rawData.lastIndexOf(')')); // Extract the JSON part
