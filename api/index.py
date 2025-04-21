@@ -26,4 +26,4 @@ def handler(request):
         "headers": {"Content-Type": "application/json"},
         "body": trending.head(10).to_json()
     }
-''''''
+'''
