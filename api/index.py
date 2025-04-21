@@ -1,6 +1,7 @@
 
 # get trending search keywords of the day
 
+'''
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pytrends.request import TrendReq
 import json
@@ -32,3 +33,4 @@ def run(server_class=HTTPServer, handler_class=SimpleHandler, port=8080):
 
 if __name__ == '__main__':
     run()
+'''
