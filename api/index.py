@@ -6,7 +6,7 @@ from pytrends.request import TrendReq
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/api", methods=["GET"])
 def youtube_trending():
     pytrends = TrendReq()
     pytrends.build_payload(kw_list=[], cat=0, timeframe='now 1-d', geo='US', gprop='youtube')
