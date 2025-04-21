@@ -13,6 +13,8 @@ def youtube_trending():
     trending = pytrends.trending_searches(pn='united_states')
     return jsonify(trending.head(10).to_dict()[0])  # sends a JSON list of top 10 trends
 
+if __name__ == "__main__":
+    app.run(debug=True)
 
 '''
 from pytrends.request import TrendReq
